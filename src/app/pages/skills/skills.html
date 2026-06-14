@@ -1,0 +1,57 @@
+<section id="skills" class="skills-section">
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="section-header">
+      <span class="section-badge">Tecnologías</span>
+      <h2>Stack Tecnológico</h2>
+      <p>Herramientas y tecnologías que utilizo en mi día a día</p>
+    </div>
+
+    <!-- Grid de habilidades por categoría -->
+    <div class="skills-grid">
+      <div class="category-group" *ngFor="let category of categories">
+        <h3 class="category-title">{{ category }}</h3>
+        <div class="skills-row">
+          <div
+            class="skill-card"
+            *ngFor="let skill of getSkillsByCategory(category)"
+          >
+            <div class="skill-logo">
+              <img
+                [src]="skill.imageUrl"
+                [alt]="skill.name"
+                (error)="handleImageError($event)"
+              />
+            </div>
+            <div class="skill-info">
+              <h4 class="skill-name">{{ skill.name }}</h4>
+              <p class="skill-desc">{{ skill.description }}</p>
+              <div class="skill-experience">
+                <span class="experience-badge">
+                  {{ skill.yearsOfExperience }}
+                  {{ skill.yearsOfExperience === 1 ? "año" : "años" }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resumen de experiencia -->
+    <div class="experience-summary">
+      <div class="summary-card">
+        <div class="summary-number">3+</div>
+        <div class="summary-label">Años de experiencia<br />en desarrollo</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-number">10+</div>
+        <div class="summary-label">Proyectos<br />completados</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-number">12</div>
+        <div class="summary-label">Tecnologías<br />dominadas</div>
+      </div>
+    </div>
+  </div>
+</section>

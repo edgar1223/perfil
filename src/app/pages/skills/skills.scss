@@ -1,0 +1,192 @@
+.skills-section {
+    padding: 80px 5%;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 48px;
+
+        .section-badge {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #4f46e5;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #6b7280;
+        }
+    }
+
+    .skills-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+
+        .category-group {
+            .category-title {
+                font-size: 20px;
+                font-weight: 600;
+                color: #111827;
+                margin-bottom: 20px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid #4f46e5;
+                display: inline-block;
+            }
+
+            .skills-row {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+        }
+    }
+
+    .skill-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 16px;
+        transition: all 0.2s;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-color: #4f46e5;
+        }
+
+        .skill-logo {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: transparent;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+                transition: transform 0.2s;
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+
+        .skill-info {
+            flex: 1;
+
+            .skill-name {
+                font-size: 16px;
+                font-weight: 600;
+                color: #111827;
+                margin-bottom: 4px;
+            }
+
+            .skill-desc {
+                font-size: 12px;
+                color: #6b7280;
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+
+            .skill-experience {
+                .experience-badge {
+                    display: inline-block;
+                    background: #e0e7ff;
+                    color: #4f46e5;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-size: 11px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .experience-summary {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid #e5e7eb;
+
+        .summary-card {
+            text-align: center;
+            padding: 20px 30px;
+            background: #f9fafb;
+            border-radius: 12px;
+            min-width: 180px;
+
+            .summary-number {
+                font-size: 42px;
+                font-weight: 700;
+                color: #4f46e5;
+                margin-bottom: 8px;
+            }
+
+            .summary-label {
+                font-size: 13px;
+                color: #6b7280;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 50px 5%;
+
+        .section-header h2 {
+            font-size: 28px;
+        }
+
+        .skills-grid .category-group .skills-row {
+            grid-template-columns: 1fr;
+        }
+
+        .experience-summary {
+            gap: 16px;
+
+            .summary-card {
+                padding: 16px 20px;
+                min-width: 140px;
+
+                .summary-number {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
